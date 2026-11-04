@@ -1,0 +1,41 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Sidebar, { type ViewTab } from "@/components/Sidebar";
+import DashboardView from "@/components/dashboard/DashboardView";
+import VeritasEngine from "@/components/veritas/VeritasEngine";
+import DatabaseView from "@/components/database/DatabaseView";
+import TestRunnerView from "@/components/testing/TestRunnerView";
+import { claimVerificationData } from "@/data/claimVerification";
+import { sourceVerificationData } from "@/data/sourceVerification";
+
+export default function Home() {
+  const [activeTab, setActiveTab] = useState<ViewTab>("dashboard");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get("tab") as ViewTab;
+      if (tabParam && ["dashboard", "veritas", "database", "testing"].includes(tabParam)) {
+        setActiveTab(tabParam);
+      }
+    }
+  }, []);
+
+  return (
+    <div className="flex h-screen overflow-hidden bg-slate-50">
+      <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+      <main className="flex-1 overflow-y-auto">
+        {activeTab === "dashboard" && (
+          <DashboardView
+            claims={claimVerificationData}
+            sources={sourceVerificationData}
+          />
+        )}
+        {activeTab === "veritas" && <VeritasEngine />}
+        {activeTab === "database" && <DatabaseView />}
+        {activeTab === "testing" && <TestRunnerView />}
+      </main>
+    </div>
+  );
+}

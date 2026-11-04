@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-slate-200 rounded-lg shadow-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white border border-slate-200 rounded-lg shadow-md;
+  }
+
+  .kpi-card {
+    @apply card p-5 transition-all duration-200 hover:shadow-md hover:border-slate-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium
+           text-white bg-indigo-600 rounded-md shadow-sm
+           hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed
+           transition-colors duration-150;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium
+           text-slate-700 bg-white border border-slate-300 rounded-md shadow-sm
+           hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed
+           transition-colors duration-150;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-1.5 text-sm font-medium
+           text-slate-600 rounded-md
+           hover:bg-slate-100 hover:text-slate-900
+           transition-colors duration-150;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full;
+  }
+
+  .badge-verified {
+    @apply badge bg-verified-light text-verified-dark;
+  }
+
+  .badge-false {
+    @apply badge bg-false-light text-false-dark;
+  }
+
+  .badge-misleading {
+    @apply badge bg-misleading-light text-misleading-dark;
+  }
+
+  .badge-unverifiable {
+    @apply badge bg-unverifiable-light text-unverifiable-dark;
+  }
+
+  .badge-pending {
+    @apply badge bg-pending-light text-pending-dark;
+  }
+
+  .input-field {
+    @apply block w-full px-3 py-2 text-sm border border-slate-300 rounded-md shadow-sm
+           placeholder:text-slate-400
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+           transition-colors duration-150;
+  }
+
+  .select-field {
+    @apply input-field bg-white cursor-pointer;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-slate-900 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-sm text-slate-500 font-normal;
+  }
+
+  .slider-track {
+    @apply w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer;
+  }
+
+  .slider-track::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 bg-indigo-600 rounded-full cursor-pointer
+           shadow-sm border-2 border-white;
+  }
+
+  .slider-track::-moz-range-thumb {
+    @apply w-4 h-4 bg-indigo-600 rounded-full cursor-pointer
+           shadow-sm border-2 border-white;
+  }
+
+  .override-alert {
+    @apply p-4 rounded-lg border-l-4 animate-fade-in;
+  }
+
+  .override-critical {
+    @apply override-alert bg-red-50 border-red-500 text-red-800;
+  }
+
+  .override-warning {
+    @apply override-alert bg-amber-50 border-amber-500 text-amber-800;
+  }
+
+  .override-info {
+    @apply override-alert bg-blue-50 border-blue-500 text-blue-800;
+  }
+
+  .tab-active {
+    @apply text-indigo-600 border-b-2 border-indigo-600 font-medium;
+  }
+
+  .tab-inactive {
+    @apply text-slate-500 border-b-2 border-transparent hover:text-slate-700 hover:border-slate-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
