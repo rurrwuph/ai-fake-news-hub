@@ -1,0 +1,105 @@
+import type { AIResponseComparison } from "@/lib/types";
+
+export const aiResponseComparisonData: AIResponseComparison[] = [
+  {
+    testId: "TEST001",
+    question: "What is the exact population of Tokyo as of the most recent official census?",
+    chatGPTResponse: "According to the Tokyo Metropolitan Government, the population of Tokyo Metropolis is approximately 14.09 million people as of 2023, while the Greater Tokyo Area encompasses over 37 million.",
+    geminiResponse: "The Tokyo Metropolitan Government recorded approximately 14.04 million residents in Tokyo Prefecture in 2023. The broader Tokyo Kanto metropolitan agglomeration has around 37.4 million.",
+    deepSeekResponse: "Tokyo has a population of 37,393,000 as of the latest census statistics, making it the world's most populous metropolitan city.",
+    differences: "DeepSeek directly reports the Greater Tokyo Megalopolis figure as Tokyo's population without distinguishing between Tokyo Metropolis (prefecture) and the metropolitan conurbation.",
+    incorrectClaims: "DeepSeek failed to delineate municipal/prefecture boundaries versus OECD functional urban area, presenting 37.4M as municipal census data.",
+    finalFinding: "Tokyo Metropolis (prefecture proper) population is 14.04-14.09 million. The Greater Tokyo Area (conurbation including Kanagawa, Saitama, Chiba) is ~37.4 million."
+  },
+  {
+    testId: "TEST002",
+    question: "Did James Webb Space Telescope discover liquid water oceans on exoplanet K2-18b?",
+    chatGPTResponse: "No, JWST detected carbon-bearing molecules like methane and carbon dioxide in K2-18b's atmosphere and tentative traces of dimethyl sulfide (DMS), but did not definitively confirm liquid water oceans.",
+    geminiResponse: "JWST observations identified methane and CO2 with a lack of ammonia, consistent with a Hycean scenario (a water ocean beneath a hydrogen-rich atmosphere). However, liquid water is an unconfirmed hypothesis, not an observed certainty.",
+    deepSeekResponse: "Yes, NASA announced that the James Webb Space Telescope confirmed the presence of a vast liquid ocean on K2-18b alongside biological markers like DMS.",
+    differences: "DeepSeek hallucinates definitive confirmation of oceans and claims biological markers were proven.",
+    incorrectClaims: "DeepSeek claimed NASA confirmed liquid oceans and proven biosignatures; NASA and Cambridge researchers explicitly stated DMS detection was tentative at <1 sigma significance.",
+    finalFinding: "JWST detected carbon-bearing molecules supporting a hypothetical Hycean ocean, but liquid water remains unconfirmed. DMS was tentative and contested by subsequent modeling."
+  },
+  {
+    testId: "TEST003",
+    question: "What is the statutory corporate income tax rate in Bangladesh for non-publicly traded companies in FY2024-2025?",
+    chatGPTResponse: "Under the Bangladesh Finance Act 2024, the standard corporate tax rate for non-publicly traded non-financial companies is 27.5%, with a conditional reduced rate of 25% if cash cashless transaction requirements are satisfied.",
+    geminiResponse: "For FY 2024-25, Bangladesh National Board of Revenue (NBR) maintains the corporate tax rate for non-listed companies at 27.5%, provided all receipts and income are transacted via bank transfer, otherwise reverting to 30%.",
+    deepSeekResponse: "The corporate tax rate for non-publicly traded companies in Bangladesh is 32.5% for general sectors as prescribed by the Ministry of Finance.",
+    differences: "DeepSeek cites outdated pre-2020 tax brackets (32.5%) and misses recent Finance Act conditional thresholds.",
+    incorrectClaims: "DeepSeek stated 32.5%, an obsolete corporate rate superseded by progressive reductions in Finance Acts 2021-2024.",
+    finalFinding: "The statutory rate is 27.5% (subject to bank transaction compliance), rising to 30% upon non-compliance, under NBR Finance Act 2024."
+  },
+  {
+    testId: "TEST004",
+    question: "What was the mechanism of action of the weight loss drug Tirzepatide (Mounjaro / Zepbound)?",
+    chatGPTResponse: "Tirzepatide is a dual GIP (glucose-dependent insulinotropic polypeptide) and GLP-1 (glucagon-like peptide-1) receptor agonist that synergistically enhances insulin secretion and delays gastric emptying.",
+    geminiResponse: "Tirzepatide is a twincretin acting as a dual agonist at both GIP and GLP-1 receptors, stimulating insulin release, suppressing glucagon postprandially, and regulating central satiety centers in the hypothalamus.",
+    deepSeekResponse: "Tirzepatide acts as a selective GLP-1 receptor agonist similar to semaglutide, with minor glucagon-inhibiting secondary binding.",
+    differences: "DeepSeek erroneously classifies Tirzepatide as a selective single GLP-1 agonist rather than a dual GIP/GLP-1 co-agonist.",
+    incorrectClaims: "DeepSeek missed its defining pharmacodynamic classification as a dual GIP receptor agonist.",
+    finalFinding: "Tirzepatide is pharmacologically defined as a dual GIP and GLP-1 receptor agonist (first-in-class twincretin approved by US FDA in 2022)."
+  },
+  {
+    testId: "TEST005",
+    question: "Has any human spacecraft visited the interstellar object 1I/'Oumuamua?",
+    chatGPTResponse: "No human spacecraft has visited 1I/'Oumuamua. It passed through the solar system in 2017 and is currently traveling outbound beyond Saturn's orbit too fast for existing operational missions to intercept.",
+    geminiResponse: "No. While theoretical proposals like Project Lyra evaluated future intercept or flyby trajectories, no mission was launched and no spacecraft has rendezvoused with 'Oumuamua.",
+    deepSeekResponse: "The ESA Rosetta mission conducted a distant imaging survey of 'Oumuamua during its hyperbolic passage through perihelion in October 2017.",
+    differences: "DeepSeek fabricates an observation mission by ESA Rosetta, which was decommissioned in September 2016.",
+    incorrectClaims: "Rosetta was deliberately crashed onto Comet 67P on September 30, 2016, more than a year before 'Oumuamua was discovered on October 19, 2017.",
+    finalFinding: "Zero spacecraft have visited or imaged 'Oumuamua in situ. Ground and space telescopes (Pan-STARRS, Hubble) provided all astronomical data."
+  },
+  {
+    testId: "TEST006",
+    question: "Who was the first female President of the United Nations General Assembly?",
+    chatGPTResponse: "Vijaya Lakshmi Pandit of India was elected as the first female President of the UN General Assembly in 1953 for the eighth session.",
+    geminiResponse: "Vijaya Lakshmi Pandit (India) served as President of the UN General Assembly for its 8th session in 1953, becoming the first woman to hold the post.",
+    deepSeekResponse: "Eleanor Roosevelt was the first female President of the UN General Assembly, serving in 1946 following the drafting of the Universal Declaration of Human Rights.",
+    differences: "DeepSeek confuses Eleanor Roosevelt's role as US delegate and Chair of the UN Commission on Human Rights with the Presidency of the General Assembly.",
+    incorrectClaims: "Eleanor Roosevelt was never President of the General Assembly; Paul-Henri Spaak was the first UNGA President (1946).",
+    finalFinding: "Vijaya Lakshmi Pandit (India) was elected President of the 8th General Assembly session in 1953."
+  },
+  {
+    testId: "TEST007",
+    question: "Can quantum computers using Shor's algorithm currently break 2048-bit RSA encryption in real-time?",
+    chatGPTResponse: "No. Shor's algorithm mathematically factors large integers in polynomial time, but current quantum computers (NISQ era) have insufficient logical, fault-tolerant qubits. Breaking RSA-2048 requires millions of physical qubits with error correction.",
+    geminiResponse: "No. Factoring RSA-2048 requires ~20 million noisy physical qubits or ~4,000 fault-tolerant logical qubits. Current leading quantum hardware operates below 1,200 noisy physical qubits with gate fidelities inadequate for Shor's depth.",
+    deepSeekResponse: "While Shor's algorithm provides exponential speedup, experimental quantum chips achieved factoring of RSA-2048 in limited laboratory trials in late 2024.",
+    differences: "DeepSeek hallucinated experimental factoring trials of RSA-2048.",
+    incorrectClaims: "No laboratory has factored RSA-2048 using quantum hardware; the largest integer factored by Shor's algorithm without prior parameter hints remains under 50,000 (such as 21 and 15).",
+    finalFinding: "RSA-2048 remains unbroken by quantum hardware. Post-quantum cryptography standardization (NIST FIPS 203, 204, 205) is preemptive."
+  },
+  {
+    testId: "TEST008",
+    question: "What is the highest temperature ever recorded under standard meteorological conditions on Earth?",
+    chatGPTResponse: "The official WMO record is 56.7°C (134.0°F) recorded at Furnace Creek, Death Valley, California on July 10, 1913, although modern atmospheric scientists widely contest its measurement reliability.",
+    geminiResponse: "The World Meteorological Organization (WMO) formally lists 56.7°C at Death Valley (1913), though research by meteorologist Christopher Burt demonstrated significant observation anomalies. The highest reliably measured modern temperature is 54.4°C (130.0°F) at Furnace Creek in 2020/2021.",
+    deepSeekResponse: "The highest recorded surface temperature on Earth is 58.0°C in El Azizia, Libya, recorded in September 1922.",
+    differences: "DeepSeek quotes the El Azizia 1922 record, which was formally disqualified by the WMO in 2012.",
+    incorrectClaims: "WMO Special Investigation formally invalidated the El Azizia reading in 2012 due to an inexperienced observer and miscalibrated bell-jar thermometer.",
+    finalFinding: "WMO recognizes 56.7°C (Death Valley, 1913) as official historical record, while modern verified consensus acknowledges 54.4°C (Furnace Creek, Aug 2020 & July 2021)."
+  },
+  {
+    testId: "TEST009",
+    question: "Does the human brain have 100 billion neurons?",
+    chatGPTResponse: "Historically textbooks stated 100 billion, but Dr. Suzana Herculano-Houzel's isotropic fractionator research in 2009 determined the average adult human brain contains approximately 86 billion neurons.",
+    geminiResponse: "The long-standing '100 billion' figure was debunked by Herculano-Houzel and colleagues (2009). The quantified average is 86.1 ± 8.1 billion neurons (cerebral cortex holds ~16B, cerebellum ~69B).",
+    deepSeekResponse: "Yes, neurobiology confirms the human brain contains roughly 100 to 120 billion neurons and an equal number of glial cells.",
+    differences: "DeepSeek repeats the outdated rough estimate and exaggerates the upper range without citing modern cell count quantification.",
+    incorrectClaims: "DeepSeek asserted 100-120 billion neurons; empirical isotropic fractionator methodology establishes 86 billion ± 8B.",
+    finalFinding: "Empirical quantification proves ~86 billion neurons, not 100-120 billion (Herculano-Houzel, J. Comp. Neurol., 2009)."
+  },
+  {
+    testId: "TEST010",
+    question: "What is the exact chemical composition of the atmosphere on Mars?",
+    chatGPTResponse: "Mars' atmosphere is approximately 95.3% Carbon Dioxide, 2.6% Nitrogen, 1.9% Argon, 0.16% Oxygen, and 0.08% Carbon Monoxide, with trace water vapor and noble gases.",
+    geminiResponse: "By volume: Carbon Dioxide 95.32%, Nitrogen 2.59%, Argon 1.93%, Oxygen 0.16%, Carbon Monoxide 0.06%, along with seasonal traces of water vapor, methane, and ozone (measured by Curiosity and Viking).",
+    deepSeekResponse: "Mars' atmosphere consists of 78% Carbon Dioxide, 15% Nitrogen, 5% Argon, and 2% Oxygen.",
+    differences: "DeepSeek completely distorts the atmospheric proportions, claiming 78% CO2 and 2% O2.",
+    incorrectClaims: "DeepSeek hallucinates 2% oxygen (12x higher than actual 0.16%) and 15% nitrogen (6x higher than actual 2.6%).",
+    finalFinding: "Mars atmosphere is 95.3% CO2, 2.6% N2, 1.9% Ar, 0.16% O2 (NASA Planetary Fact Sheet / Curiosity SAM instrument)."
+  }
+];
+
