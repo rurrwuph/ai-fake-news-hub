@@ -171,12 +171,18 @@ npm run start
 
 ```
 ai-fake-news-hub/
-├── data-templates/               # 5 production-ready CSV files for Google Sheets
+├── data-templates/               # Production-ready CSV files (Week 5 + Week 6)
 │   ├── Claim_Verification.csv
 │   ├── Source_Verification.csv
 │   ├── AI_Response_Comparison.csv
 │   ├── Fake_News_Investigation.csv
-│   └── Bias_Analysis.csv
+│   ├── Bias_Analysis.csv
+│   ├── Week6_News_Selection.csv
+│   ├── Week6_Claims_50.csv
+│   ├── Week6_Evidence_Repository.csv
+│   ├── Week6_AI_vs_Human_Comparison.csv
+│   ├── Week6_AI_Errors_Audit.csv
+│   └── Week6_Source_Reliability.csv
 ├── src/
 │   ├── app/
 │   │   ├── globals.css           # Professional styling (Inter, custom badges, cards)
@@ -185,36 +191,47 @@ ai-fake-news-hub/
 │   ├── components/
 │   │   ├── Sidebar.tsx           # Collapsible ecosystem navigation & table counters
 │   │   ├── dashboard/            # Looker Studio BI Dashboard components
-│   │   │   ├── KPICards.tsx
-│   │   │   ├── DonutChart.tsx
-│   │   │   ├── BarCharts.tsx
-│   │   │   ├── TimeSeriesChart.tsx
-│   │   │   ├── SourceBreakdown.tsx
-│   │   │   ├── DataTable.tsx
-│   │   │   └── DashboardView.tsx
+│   │   ├── week6/                # Week 6 News Investigation & Fact-Checking Hub
+│   │   │   └── Week6InvestigationHub.tsx
 │   │   ├── veritas/              # VeritasAI 7-Stage Interactive Pipeline
-│   │   │   ├── SentenceDecomposer.tsx
-│   │   │   ├── CriterionSliders.tsx
-│   │   │   ├── ThresholdBar.tsx
-│   │   │   ├── OverrideAlerts.tsx
-│   │   │   ├── EvidenceCitationForm.tsx
-│   │   │   ├── BenchmarkCases.tsx
-│   │   │   ├── AuditExport.tsx
-│   │   │   └── VeritasEngine.tsx
-│   │   └── database/             # 5-Sheet Relational Schema Interactive Hub
-│   │       └── DatabaseView.tsx
+│   │   ├── database/             # Relational Schema Interactive Hub
+│   │   └── testing/              # Automated Validation Suite (TC01-TC05)
 │   ├── data/                     # Typed datasets strictly conforming to interfaces
-│   │   ├── claimVerification.ts  (32 records)
-│   │   ├── sourceVerification.ts (24 records)
+│   │   ├── claimVerification.ts  (32 Week 5 records)
+│   │   ├── sourceVerification.ts (24 Week 5 records)
 │   │   ├── aiResponseComparison.ts (10 records)
 │   │   ├── fakeNewsInvestigation.ts (8 dossiers)
 │   │   ├── biasAnalysis.ts       (10 analyses)
-│   │   └── benchmarkCases.ts     (5 test suites)
+│   │   ├── benchmarkCases.ts     (5 test suites)
+│   │   └── week6Investigation.ts (5 Articles, 50 Claims, 50 Evidence, 10 AI Errors)
 │   └── lib/
-│       ├── types.ts              # TypeScript relational contracts
+│       ├── types.ts              # TypeScript relational contracts (Week 5 + Week 6)
 │       └── vqiEngine.ts          # Deterministic VQI mathematical logic & overrides
 ├── package.json
 ├── tailwind.config.ts
 └── tsconfig.json
 ```
+
+---
+
+## 7. Week 6 Extension: AI + Human Fact-Checking Integration
+
+In Week 6, the platform was expanded to support real-world journalistic fact-checking across five domains (*Politics & Public Affairs*, *Business & Economics*, *Science & Technology*, *Health & Education*, and *International Affairs*) with full human-in-the-loop adjudication via `Week6InvestigationHub.tsx` (`?tab=week6`).
+
+### Implemented Week 6 Modules
+1. **7.1 Claim Verification Database (`Week6_Claims_50.csv`):** 50 extracted factual claims (`CLM001`–`CLM050`) linked to articles `ART01`–`ART05`, searchable by category, article, and final verdict (`Verified`, `False`, `Misleading`, `Partially True`, `Unverifiable`), with one-click CSV export.
+2. **7.2 & 7.4 Source & Evidence Repository (`Week6_Evidence_Repository.csv`):** 50 documentary evidence records (`EVI001`–`EVI050`) storing canonical URLs, publication dates, access timestamps (`2026-11-11`), verbatim excerpts, supporting/contradicting classifications, and the **10-Point Source Reliability Scoring Rubric** (`Authority 2 + Authenticity 2 + Relevance 2 + Transparency 2 + Recency 2`).
+3. **7.3 AI vs. Human Comparison Engine (`Week6_AI_vs_Human_Comparison.csv`):** Side-by-side audit comparing **ChatGPT (GPT-4o)**, **Google Gemini (1.5 Pro)**, and **DeepSeek (V3/R1)** against ground-truth human verdicts, highlighting the **20.0% AI–Human Disagreement Rate (10/50)** and cataloging **10 Documented AI Errors (`ERR01`–`ERR10`)**.
+4. **7.5 News Investigation Records (`Week6_News_Selection.csv`):** Complete dossiers for all 5 articles (`ART01`–`ART05`) including pre-AI Q1–Q6 credibility audits, overall verdicts, and side-by-side **Original Misleading Text vs. Corrected Factual Rewrites**.
+5. **7.6 Updated Verification Dashboard:** Live KPI tracking for all 8 required indicators:
+   - Total News Articles Investigated: **5**
+   - Total Factual Claims Extracted: **50**
+   - Independently Verified Claims: **37 (74.0%)**
+   - Claims Classified as False: **9 (18.0%)**
+   - Misleading Claims: **3 (6.0%)**
+   - Partially True Claims: **1 (2.0%)**
+   - Unverifiable Claims: **0 (0.0%)**
+   - AI–Human Disagreement Rate: **20.0% (10 Discrepancies)**
+6. **7.7 Interactive Platform Demonstration:** Built-in 5-stage ingestion simulator allowing reviewers to submit a new article, record multi-model AI assessments, attach primary documentary evidence, commit a human verdict, and observe real-time KPI updates across the dashboard.
+
 

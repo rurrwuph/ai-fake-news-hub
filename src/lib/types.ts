@@ -220,3 +220,97 @@ export interface AuditReport {
   isHighRiskDomain: boolean;
 }
 
+// ── Week 6: News Investigation & Human Fact-Checking ──
+
+export type Week6VerificationStatus =
+  | "Verified"
+  | "False"
+  | "Misleading"
+  | "Partially True"
+  | "Unverifiable";
+
+export type Week6ArticleCategory =
+  | "Politics & Public Affairs"
+  | "Business & Economics"
+  | "Science & Technology"
+  | "Health & Education"
+  | "International Affairs";
+
+export interface Week6NewsArticle {
+  articleId: string;
+  category: Week6ArticleCategory;
+  headline: string;
+  publisher: string;
+  author: string;
+  publicationDate: string;
+  url: string;
+  publicationType: string;
+  mainSubject: string;
+  summary: string;
+  preAiCredibility: {
+    identifiablePublisher: boolean;
+    identifiableAuthor: boolean;
+    publicationDateAvailable: boolean;
+    supportingReferences: boolean;
+    headlineAccurate: "Yes" | "Partial" | "No";
+    distinguishesFactOpinion: "Yes" | "Partial" | "No";
+  };
+  finalVerdict: string;
+  misleadingPassage?: string;
+  correctedRewrite?: string;
+}
+
+export interface Week6ClaimRecord {
+  claimId: string;
+  articleId: string;
+  extractedClaim: string;
+  category: string;
+  gpt4oAssessment: string;
+  geminiAssessment: string;
+  deepseekAssessment: string;
+  humanFinalStatus: Week6VerificationStatus;
+  primaryEvidenceId: string;
+  humanReasoning: string;
+  agreesWithAI: boolean;
+}
+
+export interface Week6EvidenceRecord {
+  evidenceId: string;
+  claimId: string;
+  sourceId: string;
+  sourceTitle: string;
+  publisher: string;
+  sourceUrl: string;
+  publicationDate: string;
+  accessDate: string;
+  relevantExcerpt: string;
+  evidenceType: string;
+  reliabilityScore10: number;
+  status: "Supporting" | "Contradicting" | "Contextual";
+}
+
+export interface Week6AIErrorRecord {
+  errorId: string;
+  aiModel: string;
+  claimId: string;
+  domain: string;
+  erroneousOutput: string;
+  empiricalGroundTruth: string;
+  rootCauseCategory: string;
+}
+
+export interface Week6SourceRubricRecord {
+  sourceId: string;
+  sourceTitle: string;
+  publisher: string;
+  classification: string;
+  authority: number;
+  authenticity: number;
+  relevance: number;
+  transparency: number;
+  recency: number;
+  totalScore: number;
+  justification: string;
+}
+
+

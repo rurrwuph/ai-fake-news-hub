@@ -12,9 +12,10 @@ import {
   ChevronLeft,
   ChevronRight,
   FlaskConical,
+  Newspaper,
 } from "lucide-react";
 
-export type ViewTab = "dashboard" | "veritas" | "database" | "testing";
+export type ViewTab = "dashboard" | "week6" | "veritas" | "database" | "testing";
 
 interface SidebarProps {
   activeTab: ViewTab;
@@ -27,6 +28,12 @@ const NAV_ITEMS: { id: ViewTab; label: string; icon: React.ReactNode; descriptio
     label: "Analytics Dashboard",
     icon: <LayoutDashboard size={20} />,
     description: "Looker Studio BI & KPIs",
+  },
+  {
+    id: "week6",
+    label: "News Fact-Checking",
+    icon: <Newspaper size={20} />,
+    description: "Week 6: 50 Claims & Evidence",
   },
   {
     id: "veritas",
@@ -49,11 +56,11 @@ const NAV_ITEMS: { id: ViewTab; label: string; icon: React.ReactNode; descriptio
 ];
 
 const DATA_TABLES = [
-  { icon: <Database size={15} />, label: "Claim_Verification", count: 32 },
-  { icon: <FileSearch size={15} />, label: "Source_Verification", count: 24 },
-  { icon: <BarChart3 size={15} />, label: "AI_Response_Comparison", count: 10 },
-  { icon: <Brain size={15} />, label: "Fake_News_Investigation", count: 8 },
-  { icon: <Brain size={15} />, label: "Bias_Analysis", count: 10 },
+  { icon: <Database size={15} />, label: "Claim_Verification", count: 82 },
+  { icon: <FileSearch size={15} />, label: "Source_Verification", count: 74 },
+  { icon: <BarChart3 size={15} />, label: "AI_vs_Human_Audit", count: 50 },
+  { icon: <Brain size={15} />, label: "News_Investigations", count: 13 },
+  { icon: <Brain size={15} />, label: "Evidence_Repository", count: 50 },
 ];
 
 export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {

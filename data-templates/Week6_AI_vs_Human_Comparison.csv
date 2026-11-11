@@ -1,0 +1,51 @@
+Claim_ID,Article_ID,GPT4o_Status,Gemini_Status,DeepSeek_Status,Human_Final_Status,AI_Human_Agreement,Discrepancy_Notes
+CLM001,ART01,Verified,Verified (entity error),Verified,Verified,True,Matches official Cabinet Division notification and Chief Adviser address.
+CLM002,ART01,Verified,Verified,Verified,Verified,True,Directly confirmed in gazetted Terms of Reference and The Daily Star.
+CLM003,ART01,Verified,Verified,Questioned,Partially True,False,"Pilot anomalies are real, but 1.2M national figure is an unverified projection."
+CLM004,ART01,Verified,Verified,Flagged Contingent,Misleading,False,Omitted strict conditionality; no unconditional 180-day hard deadline was pledged.
+CLM005,ART01,Verified,Verified,Verified,Verified,True,Confirmed by official Ministry of Law gazette record.
+CLM006,ART01,Verified,Verified,Uncertain,Misleading,False,Framing as unanimous agreement misrepresents deep partisan division.
+CLM007,ART01,Verified,Verified,Verified,Verified,True,Verified in official interim reform outline.
+CLM008,ART01,Verified,Verified,Verified,Verified,True,Confirmed by published draft statutory framework.
+CLM009,ART01,Verified,Verified,Verified,Verified,True,Cross-verified against official MoPA gazetted notifications.
+CLM010,ART01,Uncertain,Uncertain,Uncertain,False,True,Contradicted by statutory provisions of the RPO.
+CLM011,ART02,Verified (fact error),Verified,Verified,Verified,True,Exact match with Table 1.1 of the October 2024 WEO.
+CLM012,ART02,Verified,Verified,Verified,Verified,True,Verified directly in WEO Chapter 1 and Statistical Appendix.
+CLM013,ART02,Verified,Verified,Verified,Verified,True,Confirmed in Chapter 1 of companion IMF Fiscal Monitor.
+CLM014,ART02,Verified,Verified,Verified,Verified,True,Exact numerical match in WEO Table 1.1.
+CLM015,ART02,Verified,Verified,Verified,Verified,True,Verified in Euro Area regional breakdown.
+CLM016,ART02,Verified,Verified,Verified,Verified,True,Exact match with WEO baseline forecast.
+CLM017,ART02,Validated,Uncertain,Flagged False,False,False,Sensationalized headline directly contradicts IMF baseline projection of steady 3.2% growth.
+CLM018,ART02,Verified,Verified,Verified,Verified,True,Directly matches WEO regional projections.
+CLM019,ART02,Uncertain,Supported,Flagged False,False,False,40% uniform compression figure is fabricated; actual tightening was ~8.5%.
+CLM020,ART02,Verified,Uncertain,Verified,Verified,True,Verified by WTO Trade Monitoring Database.
+CLM021,ART03,Verified,Verified,Verified,Verified,True,Verbatim match with Vaswani et al. (2017) Abstract.
+CLM022,ART03,Verified,Verified,Verified,Verified,True,Directly verified in Table 2 of Vaswani et al.
+CLM023,ART03,Verified,Verified,Verified,Verified,True,Directly verified in Table 2 and Section 6.1.
+CLM024,ART03,Verified,Verified,Verified,Verified,True,"Exact mathematical notation in Section 4, Table 1."
+CLM025,ART03,Verified,Verified,Verified,Verified,True,Exact match with Section 4 theoretical comparison.
+CLM026,ART03,Verified,Verified,Verified,Verified,True,Verified in Section 5.2 Hardware and Schedule.
+CLM027,ART03,Verified,Uncertain,Verified,Verified,True,Matches Section 5.2 and Table 2 FLOP calculations.
+CLM028,ART03,Validated,Uncertain,Flagged False,False,False,Vanilla Transformers have quadratic O(n^2) memory scaling; sub-quadratic memory requires FlashAttention or sparse approximations.
+CLM029,ART03,Verified,Verified,Verified,Verified,True,Exact parameter match with Section 3.2.2.
+CLM030,ART03,Verified,Flagged False,Validated,False,False,"Vaswani et al. introduced self-attention without recurrence, not the invention of attention itself."
+CLM031,ART04,Verified,Verified,Verified (bad URL),Verified,True,Exact figure confirmed in WHO Global TB Report 2024.
+CLM032,ART04,Verified,Verified,Verified,Verified,True,Verified in WHO 2024 epidemiological tables.
+CLM033,ART04,Verified,Verified,Verified,Verified,True,Confirmed by WHO mortality comparative rankings.
+CLM034,ART04,Verified,Verified,Verified (math err),Verified,True,Verified directly in Financing section (74% shortfall).
+CLM035,ART04,Verified,Verified,Verified,Verified,True,Exact match with WHO country share percentages.
+CLM036,ART04,Flagged False,Flagged False,Flagged False,False,True,TB has not been eradicated anywhere; domestic and imported cases persist in all OECD nations.
+CLM037,ART04,Verified,Verified,Verified,Verified,True,Verified in drug-resistant TB chapter.
+CLM038,ART04,Verified,Verified,Verified,Verified,True,Matches WHO cohort treatment success metrics.
+CLM039,ART04,Verified,Verified,Verified,Verified,True,Directly supported by WHO national patient cost surveys.
+CLM040,ART04,Uncertain,Flagged False,Flagged False,False,False,100% claim is flatly contradicted; actual global pediatric coverage was 40%.
+CLM041,ART05,Verified,Verified,Verified,Verified,True,Verbatim match with Paragraph 8 of final COP29 NCQG decision.
+CLM042,ART05,Verified,Verified,Verified,Verified,True,Confirmed by official G77 plenary submission.
+CLM043,ART05,Verified,Misinterpreted Binding,Verified,Verified,True,Exact match with Paragraph 7 (Baku to Belem Roadmap).
+CLM044,ART05,Verified,Verified,Verified,Verified,True,Confirmed in official COP29 closing plenary outcomes.
+CLM045,ART05,Uncertain,Validated (2025 err),Flagged False,False,False,Misstates target year by 10 years and mischaracterizes mobilization as direct cash.
+CLM046,ART05,Verified,Verified,Verified,Verified,True,Verified against UN plenary verbatim video transcript.
+CLM047,ART05,Flagged False,Flagged False,Flagged False,False,True,No binding 2030 coal shutdown mandate was adopted in Baku.
+CLM048,ART05,Verified,Verified,Verified,Verified,True,Confirmed by official FRLD Board decision.
+CLM049,ART05,Verified,Verified,Verified,Verified,True,Matches official UN conference registration stats.
+CLM050,ART05,Validated,Uncertain,Flagged Misleading,Misleading,False,Conflates aspirational global investment goal with binding direct government grants.

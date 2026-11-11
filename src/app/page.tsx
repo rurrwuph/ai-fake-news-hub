@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Sidebar, { type ViewTab } from "@/components/Sidebar";
 import DashboardView from "@/components/dashboard/DashboardView";
+import Week6InvestigationHub from "@/components/week6/Week6InvestigationHub";
 import VeritasEngine from "@/components/veritas/VeritasEngine";
 import DatabaseView from "@/components/database/DatabaseView";
 import TestRunnerView from "@/components/testing/TestRunnerView";
@@ -16,7 +17,7 @@ export default function Home() {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const tabParam = params.get("tab") as ViewTab;
-      if (tabParam && ["dashboard", "veritas", "database", "testing"].includes(tabParam)) {
+      if (tabParam && ["dashboard", "week6", "veritas", "database", "testing"].includes(tabParam)) {
         setActiveTab(tabParam);
       }
     }
@@ -27,11 +28,15 @@ export default function Home() {
       <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
       <main className="flex-1 overflow-y-auto">
         {activeTab === "dashboard" && (
-          <DashboardView
-            claims={claimVerificationData}
-            sources={sourceVerificationData}
-          />
+          <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
+            <DashboardView
+              claims={claimVerificationData}
+              sources={sourceVerificationData}
+              onOpenWeek6={() => setActiveTab("week6")}
+            />
+          </div>
         )}
+        {activeTab === "week6" && <Week6InvestigationHub />}
         {activeTab === "veritas" && <VeritasEngine />}
         {activeTab === "database" && <DatabaseView />}
         {activeTab === "testing" && <TestRunnerView />}

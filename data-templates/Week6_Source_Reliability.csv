@@ -1,0 +1,13 @@
+Source_ID,Source_Title,Publisher,Classification,Authority_2,Authenticity_2,Relevance_2,Transparency_2,Recency_2,Total_10,Justification
+SRC01,Bangladesh Cabinet & Ministry Gazettes,Bangladesh Govt. Press,Primary Statutory,2.0,2.0,2.0,2.0,2.0,10.0,Statutory force of law; verifiable gazette numbers.
+SRC02,Election Commission Pilot Audit Memo,Bangladesh EC,Primary Internal,2.0,1.5,2.0,1.5,2.0,9.0,Official internal pilot document; partial national extrapolation.
+SRC03,Chief Adviser Address Transcript,PID Bangladesh,Primary Official,2.0,2.0,2.0,2.0,2.0,10.0,Verbatim state broadcast archive.
+SRC09,IMF World Economic Outlook (Oct 2024),International Monetary Fund,Primary Multilateral,2.0,2.0,2.0,2.0,2.0,10.0,Global benchmark macroeconomic dataset with open methodology.
+SRC10,IMF Fiscal Monitor (Oct 2024),International Monetary Fund,Primary Multilateral,2.0,2.0,2.0,2.0,2.0,10.0,Authoritative public debt database.
+SRC11,Bloomberg EMBIGD Bond Index Feed,Bloomberg L.P.,Secondary Market,2.0,2.0,2.0,1.0,1.5,8.5,High market precision; proprietary paywall limits transparency.
+SRC13,Attention Is All You Need (Vaswani et al.),NeurIPS / Cornell ArXiv,Primary Academic,2.0,2.0,2.0,2.0,2.0,10.0,Seminal peer-reviewed deep learning paper with exact equations.
+SRC14,"FlashAttention Paper (Dao et al., 2022)",NeurIPS / Cornell ArXiv,Primary Academic,2.0,2.0,2.0,2.0,2.0,10.0,Peer-reviewed IO-aware complexity proof.
+SRC15,Bahdanau et al. (ICLR 2015),ICLR / Cornell ArXiv,Primary Academic,2.0,2.0,2.0,2.0,2.0,10.0,Foundational neural attention paper predating Transformers.
+SRC16,WHO Global Tuberculosis Report 2024,World Health Organization,Primary Multilateral,2.0,2.0,2.0,2.0,2.0,10.0,Official 193-country epidemiological surveillance report.
+SRC18,UNFCCC COP29 Decision 1/CMA.6 (NCQG),UNFCCC Secretariat,Primary Treaty,2.0,2.0,2.0,2.0,2.0,10.0,Binding international climate conference decision record.
+SRC24,Crypto-Finance Aggregator SEO Blog,Unverified Scraper,Spurious,0.0,0.0,0.5,0.0,1.0,1.5,Zero authorship transparency; distorted scraped wire claims.
