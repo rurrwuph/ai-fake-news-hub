@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Sidebar, { type ViewTab } from "@/components/Sidebar";
+import Week7ClassificationHub from "@/components/week7/Week7ClassificationHub";
 import DashboardView from "@/components/dashboard/DashboardView";
 import Week6InvestigationHub from "@/components/week6/Week6InvestigationHub";
 import VeritasEngine from "@/components/veritas/VeritasEngine";
@@ -11,13 +12,13 @@ import { claimVerificationData } from "@/data/claimVerification";
 import { sourceVerificationData } from "@/data/sourceVerification";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<ViewTab>("dashboard");
+  const [activeTab, setActiveTab] = useState<ViewTab>("week7");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       const tabParam = params.get("tab") as ViewTab;
-      if (tabParam && ["dashboard", "week6", "veritas", "database", "testing"].includes(tabParam)) {
+      if (tabParam && ["week7", "dashboard", "week6", "veritas", "database", "testing"].includes(tabParam)) {
         setActiveTab(tabParam);
       }
     }
@@ -27,6 +28,7 @@ export default function Home() {
     <div className="flex h-screen overflow-hidden bg-slate-50">
       <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
       <main className="flex-1 overflow-y-auto">
+        {activeTab === "week7" && <Week7ClassificationHub />}
         {activeTab === "dashboard" && (
           <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto">
             <DashboardView

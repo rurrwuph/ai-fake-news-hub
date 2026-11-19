@@ -13,9 +13,11 @@ import {
   ChevronRight,
   FlaskConical,
   Newspaper,
+  Sliders,
+  CheckCheck,
 } from "lucide-react";
 
-export type ViewTab = "dashboard" | "week6" | "veritas" | "database" | "testing";
+export type ViewTab = "week7" | "dashboard" | "week6" | "veritas" | "database" | "testing";
 
 interface SidebarProps {
   activeTab: ViewTab;
@@ -23,6 +25,12 @@ interface SidebarProps {
 }
 
 const NAV_ITEMS: { id: ViewTab; label: string; icon: React.ReactNode; description: string }[] = [
+  {
+    id: "week7",
+    label: "AI Classification Hub",
+    icon: <CheckCheck size={20} />,
+    description: "Week 7: Real/Fake/Suspicious Review",
+  },
   {
     id: "dashboard",
     label: "Analytics Dashboard",

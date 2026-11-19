@@ -31,5 +31,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# generator scripts
+# temporary scripts
 scripts/
